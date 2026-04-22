@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMongers - Windows Setup Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            border-bottom: 4px solid #FF6B35;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #FF6B35;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        h2 {
+            color: #FF6B35;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #FF6B35;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .step {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #FF6B35;
+            border-radius: 5px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background-color: #FF6B35;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .command {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            line-height: 1.4;
+            font-size: 0.95em;
+        }
+        
+        .cmd-label {
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .warning {
+            background-color: #fff3e0;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .success {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th {
+            background-color: #FF6B35;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .checklist {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐟 FreshMongers</h1>
+            <p class="subtitle">Complete Setup Guide for Windows</p>
+            <p style="color: #999; margin-top: 10px;">Online Fish Selling Platform | Setup on Windows PC/Laptop</p>
+        </header>
+
+        <div class="note">
+            <strong>⏱️ Estimated Time:</strong> 15-20 minutes to complete full setup<br>
+            <strong>📋 Pre-requisites:</strong> Windows PC with internet connection
+        </div>
+
+        <!-- PHASE 1: Prerequisites -->
+        <div class="section">
+            <h2>PHASE 1: Install Prerequisites</h2>
+            
+            <div class="step">
+                <h3><span class="step-number">1</span> Install Node.js</h3>
+                <p><strong>What is it?</strong> Runtime environment for JavaScript (needed for backend and frontend)</p>
+                
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li>Visit <strong>https://nodejs.org</strong></li>
+                    <li>Download <strong>"LTS"</strong> version (Long Term Support)</li>
+                    <li>Run the installer and click "Next" → "Install" → "Finish"</li>
+                    <li>Open <strong>PowerShell</strong> and verify installation:</li>
+                </ol>
+                
+                <span class="cmd-label">PowerShell Command:</span>
+                <div class="command">node --version
+npm --version</div>
+                
+                <div class="success">
+                    <strong>✓ Expected Output:</strong><br>
+                    v18.x.x or higher<br>
+                    9.x.x or higher
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span> Install MySQL</h3>
+                <p><strong>What is it?</strong> Database server to store all application data</p>
+                
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li>Visit <strong>https://dev.mysql.com/downloads/mysql/</strong></li>
+                    <li>Download <strong>MySQL Community Server</strong> (latest version)</li>
+                    <li>Run installer → Select "Custom Setup" → Next → Install</li>
+                    <li>During setup, choose <strong>"MySQL Server"</strong> option</li>
+                    <li>Set root password when prompted (remember this!)</li>
+                    <li>Complete installation</li>
+                    <li>Open <strong>PowerShell</strong> and verify:</li>
+                </ol>
+                
+                <span class="cmd-label">PowerShell Command:</span>
+                <div class="command">mysql --version</div>
+                
+                <div class="warning">
+                    <strong>⚠️ Important:</strong> Remember the MySQL root password you set during installation
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span> Download Project Files</h3>
+                <p>The FreshMongers project files are located at:</p>
+                
+                <div class="command">C:\Users\DELL\Desktop\Chameleon\FreshMongers</div>
+                
+                <div class="note">
+                    <strong>📁 Folder Structure:</strong><br>
+                    • frontend/ → React/Next.js application<br>
+                    • backend/ → Node.js/Express server<br>
+                    • db/ → Database SQL files
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE 2: Database Setup -->
+        <div class="section">
+            <h2>PHASE 2: Setup MySQL Database</h2>
+            
+            <div class="step">
+                <h3><span class="step-number">4</span> Create Database</h3>
+                <p>Open <strong>PowerShell</strong> and run:</p>
+                
+                <span class="cmd-label">Step 4a: Navigate to project folder</span>
+                <div class="command">cd "C:\Users\DELL\Desktop\Chameleon\FreshMongers"</div>
+                
+                <span class="cmd-label">Step 4b: Create database using schema file</span>
+                <div class="command">mysql -u root -p < db\schema.sql</div>
+                
+                <p style="margin: 15px 0;"><strong>When prompted, enter your MySQL root password</strong></p>
+                
+                <span class="cmd-label">Step 4c: (Optional) Add sample data</span>
+                <div class="command">mysql -u root -p < db\seed.sql</div>
+                
+                <p style="margin: 15px 0;"><strong>Enter your MySQL root password again</strong></p>
+                
+                <div class="success">
+                    <strong>✓ Database created successfully!</strong> You now have a database with all tables ready
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">5</span> Verify Database Setup</h3>
+                <p>Open <strong>PowerShell</strong> and run:</p>
+                
+                <span class="cmd-label">PowerShell Command:</span>
+                <div class="command">mysql -u root -p -e "USE freshmongers_db; SHOW TABLES;"</div>
+                
+                <p style="margin: 15px 0;"><strong>Enter your MySQL root password</strong></p>
+                
+                <div class="success">
+                    <strong>✓ Expected Output:</strong> You should see a list of tables (users, products, orders, etc.)
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE 3: Backend Setup -->
+        <div class="section">
+            <h2>PHASE 3: Setup Backend (Node.js Server)</h2>
+            
+            <div class="step">
+                <h3><span class="step-number">6</span> Install Backend Dependencies</h3>
+                <p>Open a <strong>new PowerShell window</strong> and run:</p>
+                
+                <span class="cmd-label">Step 6a: Navigate to backend folder</span>
+                <div class="command">cd "C:\Users\DELL\Desktop\Chameleon\FreshMongers\backend"</div>
+                
+                <span class="cmd-label">Step 6b: Install all packages</span>
+                <div class="command">npm install</div>
+                
+                <p style="margin: 15px 0;"><strong>⏳ Wait 2-3 minutes for installation to complete</strong></p>
+                
+                <div class="success">
+                    <strong>✓ Installation complete!</strong> You'll see "added X packages" message
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">7</span> Configure Backend Environment</h3>
+                <p>Create configuration file for backend:</p>
+                
+                <span class="cmd-label">Step 7a: Copy environment template</span>
+                <div class="command">copy .env.example .env</div>
+                
+                <span class="cmd-label">Step 7b: Open .env file in Notepad</span>
+                <div class="command">notepad .env</div>
+                
+                <p style="margin: 15px 0;"><strong>Edit the following values:</strong></p>
+                
+                <table>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Value to Enter</th>
+                    </tr>
+                    <tr>
+                        <td>DB_HOST</td>
+                        <td>localhost</td>
+                    </tr>
+                    <tr>
+                        <td>DB_USER</td>
+                        <td>root</td>
+                    </tr>
+                    <tr>
+                        <td>DB_PASSWORD</td>
+                        <td>Your MySQL root password</td>
+                    </tr>
+                    <tr>
+                        <td>DB_NAME</td>
+                        <td>freshmongers_db</td>
+                    </tr>
+                    <tr>
+                        <td>PORT</td>
+                        <td>5000</td>
+                    </tr>
+                    <tr>
+                        <td>NODE_ENV</td>
+                        <td>development</td>
+                    </tr>
+                    <tr>
+                        <td>JWT_SECRET</td>
+                        <td>your_secret_key_min_32_characters_long</td>
+                    </tr>
+                    <tr>
+                        <td>CORS_ORIGIN</td>
+                        <td>http://localhost:3000</td>
+                    </tr>
+                </table>
+                
+                <p style="margin: 15px 0;"><strong>Leave other settings empty for now (Firebase, Cloudinary, etc.)</strong></p>
+                <p style="margin: 15px 0;"><strong>Save the file: Ctrl+S → Close Notepad</strong></p>
+                
+                <div class="note">
+                    <strong>💡 Tip:</strong> You can edit .env without opening Notepad by using:
+                    <div class="command" style="margin-top: 10px;">notepad .env</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">8</span> Start Backend Server</h3>
+                <p>In the <strong>same PowerShell window</strong> (in backend folder), run:</p>
+                
+                <span class="cmd-label">PowerShell Command:</span>
+                <div class="command">npm run dev</div>
+                
+                <p style="margin: 15px 0;"><strong>⏳ Wait 5-10 seconds for server to start</strong></p>
+                
+                <div class="success">
+                    <strong>✓ Backend is running!</strong> You should see:<br>
+                    "Server is running on http://localhost:5000"
+                </div>
+                
+                <div class="warning">
+                    <strong>⚠️ Keep this PowerShell window open!</strong> The backend server must keep running
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE 4: Frontend Setup -->
+        <div class="section">
+            <h2>PHASE 4: Setup Frontend (React Application)</h2>
+            
+            <div class="step">
+                <h3><span class="step-number">9</span> Install Frontend Dependencies</h3>
+                <p>Open a <strong>NEW PowerShell window</strong> and run:</p>
+                
+                <span class="cmd-label">Step 9a: Navigate to frontend folder</span>
+                <div class="command">cd "C:\Users\DELL\Desktop\Chameleon\FreshMongers\frontend"</div>
+                
+                <span class="cmd-label">Step 9b: Install all packages</span>
+                <div class="command">npm install</div>
+                
+                <p style="margin: 15px 0;"><strong>⏳ Wait 3-5 minutes for installation to complete</strong></p>
+                
+                <div class="success">
+                    <strong>✓ Installation complete!</strong> You'll see "added X packages" message
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">10</span> Configure Frontend Environment</h3>
+                <p>Create configuration file for frontend:</p>
+                
+                <span class="cmd-label">Step 10a: Copy environment template</span>
+                <div class="command">copy .env.example .env.local</div>
+                
+                <span class="cmd-label">Step 10b: Open .env.local file in Notepad</span>
+                <div class="command">notepad .env.local</div>
+                
+                <p style="margin: 15px 0;"><strong>Edit the following value:</strong></p>
+                
+                <table>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Value to Enter</th>
+                    </tr>
+                    <tr>
+                        <td>NEXT_PUBLIC_API_BASE_URL</td>
+                        <td>http://localhost:5000/api</td>
+                    </tr>
+                </table>
+                
+                <p style="margin: 15px 0;"><strong>Leave other settings empty for now (Firebase, Cloudinary, etc.)</strong></p>
+                <p style="margin: 15px 0;"><strong>Save the file: Ctrl+S → Close Notepad</strong></p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">11</span> Start Frontend Application</h3>
+                <p>In the <strong>same PowerShell window</strong> (in frontend folder), run:</p>
+                
+                <span class="cmd-label">PowerShell Command:</span>
+                <div class="command">npm run dev</div>
+                
+                <p style="margin: 15px 0;"><strong>⏳ Wait 15-20 seconds for application to compile</strong></p>
+                
+                <div class="success">
+                    <strong>✓ Frontend is ready!</strong> You should see:<br>
+                    "▲ Next.js X.XX.X<br>
+                    - Local: http://localhost:3000"
+                </div>
+                
+                <div class="warning">
+                    <strong>⚠️ Keep this PowerShell window open!</strong> The frontend must keep running
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE 5: Testing -->
+        <div class="section">
+            <h2>PHASE 5: Test the Application</h2>
+            
+            <div class="step">
+                <h3><span class="step-number">12</span> Access the Application</h3>
+                
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li>Open your web browser (Chrome, Edge, Firefox)</li>
+                    <li>Go to <strong>http://localhost:3000</strong></li>
+                    <li>You should see the FreshMongers home page</li>
+                </ol>
+                
+                <div class="success">
+                    <strong>✓ Application is running!</strong>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">13</span> Test Core Features</h3>
+                
+                <ul class="checklist">
+                    <li>Click on "Products" to see fish catalog</li>
+                    <li>Click on a product to view details</li>
+                    <li>Click "Login" and create an account</li>
+                    <li>Add products to cart</li>
+                    <li>View your orders/profile</li>
+                </ul>
+                
+                <div class="success">
+                    <strong>✓ All features working!</strong> Your application is fully setup
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="section">
+            <h2>Quick Reference - PowerShell Commands</h2>
+            
+            <div class="step">
+                <h3>Stop Application</h3>
+                <p>To stop any running server, press in the PowerShell window:</p>
+                <div class="command">Ctrl + C</div>
+                
+                <h3 style="margin-top: 20px;">Restart Application</h3>
+                <p>To restart backend or frontend:</p>
+                <div class="command">npm run dev</div>
+                
+                <h3 style="margin-top: 20px;">Access MySQL Command Line</h3>
+                <div class="command">mysql -u root -p</div>
+                <p style="margin-top: 10px;"><strong>Enter your MySQL root password when prompted</strong></p>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>Troubleshooting</h2>
+            
+            <div class="step">
+                <h3>❌ "npm: The term 'npm' is not recognized"</h3>
+                <p><strong>Solution:</strong> Node.js is not installed or not in PATH. Install Node.js from https://nodejs.org and restart PowerShell</p>
+                
+                <h3 style="margin-top: 20px;">❌ "mysql: The term 'mysql' is not recognized"</h3>
+                <p><strong>Solution:</strong> MySQL is not installed. Download from https://dev.mysql.com/downloads/mysql/ and install properly</p>
+                
+                <h3 style="margin-top: 20px;">❌ Database connection error</h3>
+                <p><strong>Solution:</strong> Check .env file - verify DB_HOST, DB_USER, DB_PASSWORD match your MySQL setup</p>
+                
+                <h3 style="margin-top: 20px;">❌ Port 3000 or 5000 already in use</h3>
+                <p><strong>Solution:</strong> Another application is using that port. Either:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Close the other application</li>
+                    <li>Or change PORT in backend .env to 5001 and update frontend .env.local accordingly</li>
+                </ul>
+                
+                <h3 style="margin-top: 20px;">❌ "npm ERR! code EACCES" during npm install</h3>
+                <p><strong>Solution:</strong> Run PowerShell as Administrator and retry</p>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section">
+            <h2>Setup Summary</h2>
+            
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Port</th>
+                    <th>URL</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Backend Server</td>
+                    <td>5000</td>
+                    <td>http://localhost:5000</td>
+                    <td>Running in PowerShell #1</td>
+                </tr>
+                <tr>
+                    <td>Frontend Application</td>
+                    <td>3000</td>
+                    <td>http://localhost:3000</td>
+                    <td>Running in PowerShell #2</td>
+                </tr>
+                <tr>
+                    <td>MySQL Database</td>
+                    <td>3306</td>
+                    <td>localhost</td>
+                    <td>Running on system</td>
+                </tr>
+            </table>
+            
+            <div class="success" style="margin-top: 20px;">
+                <strong>✅ Congratulations!</strong> FreshMongers is now fully setup and running on your Windows laptop!
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>FreshMongers Setup Guide for Windows | Created: April 2026 | Questions? Check backend/routes/ and frontend/src/ for API documentation</p>
+        </div>
+    </div>
+</body>
+</html>

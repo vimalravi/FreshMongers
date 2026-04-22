@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+*.npm
+npm-debug.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Database
+*.sql.bak
+backup.sql
+
+# Logs
+logs/
+*.log
+
+# Misc
+.cache/
+.idea/
+*.swp
+*.swo
+*~
+
+# Firebase
+firebase-key.json
+
+# IDE
+.vscode
+.idea
+*.iml
+
+# Testing
+coverage/
+.nyc_output/
